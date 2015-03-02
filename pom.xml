@@ -41,7 +41,7 @@
                 </configuration>
                 <executions>
                     <execution>
-                        <id>compile-tests</id>
+                        <id>default-testCompile</id>
                         <phase>process-test-sources</phase>
                         <goals>
                             <goal>testCompile</goal>
