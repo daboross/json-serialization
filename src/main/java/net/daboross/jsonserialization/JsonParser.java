@@ -284,13 +284,13 @@ public class JsonParser {
                 throw this.syntaxError("Missing value: Expected item, found `" + previous + "`");
             }
         }
-        if (result.equalsIgnoreCase("true")) {
+        if (result.trim().equalsIgnoreCase("true")) {
             return Boolean.TRUE;
         }
-        if (result.equalsIgnoreCase("false")) {
+        if (result.trim().equalsIgnoreCase("false")) {
             return Boolean.FALSE;
         }
-        if (result.equalsIgnoreCase("null")) {
+        if (result.trim().equalsIgnoreCase("null")) {
             return null;
         }
 
