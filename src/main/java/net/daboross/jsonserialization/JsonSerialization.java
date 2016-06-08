@@ -45,7 +45,7 @@ public class JsonSerialization {
      * @throws IOException   If the writer throws an IOException.
      */
     public static void writeNumber(Writer writer, Number number) throws JsonException, IOException {
-        if (!Double.isFinite(number.doubleValue())) {
+        if (Double.isNaN(number.doubleValue()) || Double.isInfinite(number.doubleValue())) {
             throw new JsonException("Expected finite number, found `" + number + "`");
         }
         writer.write(number.toString());
