@@ -1,8 +1,10 @@
 language: java
 install:
   - mvn dependency:resolve
-script:
-  - mvn clean package
-jdk:
-  - oraclejdk8
-  - oraclejdk7
+matrix:
+  include:
+    jdk: oraclejdk8
+    script: mvn clean package
+  include:
+    jdk: oraclejdk7
+    script: mvn clean package -Dmaven.test.skip=true
